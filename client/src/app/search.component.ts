@@ -5,7 +5,6 @@ import {User} from "./user";
 
 @Component({
     templateUrl: './search.component.html',
-    providers: [UserService]
 })
 
 export class SearchComponent {
@@ -54,7 +53,6 @@ export class SearchComponent {
 
     onAddFriend() {
        this.userService.addFriend(this.value).subscribe(result => {
-            alert(typeof result + result.username);
             this.userService.addUser(result);
             this.router.navigate(['main-page', result.username]);
             this.buttonDisabled = true;
